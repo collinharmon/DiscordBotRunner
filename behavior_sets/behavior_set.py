@@ -11,7 +11,7 @@ class BehaviorSet(ABC, threading.Thread):
     else:
       self.threadID = kwargs['thread_ID']
       self.name = kwargs['thread_name']
-      self.event_queue = kwargs['event_queue']
+      self.event_queue = kwargs['event_queue'] #queue which parent thread (DiscordBotRunner) pushes to.
       self.parent_queue = kwargs['parent_queue']
       """
       if isinstance(self.event_queue, queue) is False:
@@ -25,6 +25,9 @@ class BehaviorSet(ABC, threading.Thread):
 
   @abstractmethod
   def handle_discord_event_loop(self):
+    """
+    The abstract method to be overridden to define the Bot's (BehaviorSet) behavior
+    """
     pass
 
   def get_queue(self):
