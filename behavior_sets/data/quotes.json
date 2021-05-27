@@ -1,0 +1,30 @@
+{
+  "quotes":[
+    {
+      "quote":"No! <@>! You must never give into despair. Allow yourself to slip down that road and you surrender to your lowest instincts.",
+      "category":"ATLA",
+      "subcategories":
+      [
+        "Uncle Iroh",
+        "wisdom"
+      ]
+    },
+    {
+      "quote":"Sharing memes with a fascinating stranger is one of life's true delights.",
+      "category":"ATLA",
+      "subcategory":
+      [
+        "Uncle Iroh"
+      ],
+      "channels":
+      [
+        "travel",
+        "peru"
+      ]
+
+    },
+    {
+      "quote":" I'm begging you, <@>. It's time for you to look *inward* and begin asking yourself the big questions. Who are you and what do *you* want?"
+    }
+  ]
+}

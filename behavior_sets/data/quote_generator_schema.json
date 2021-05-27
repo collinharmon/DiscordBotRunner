@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "./shouldwork.json",
+  "title": "Quotes",
+  "description": "JSON schema specifying quotes.json format for QuoteBot to process",
+  "type": "object",
+  "properties": {
+    "quotes": {
+      "description": "Array of quote json objects",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "quote": {
+            "description": "The quote. Cannot be null and must be a valid string.",
+            "type": "string"
+          },
+          "category": {
+            "description": "Optional field specifying category of quote (e.g. Uncle Iroh, Star Wars, Orwell).",
+            "type": "string"
+          },
+          "subcategories":{
+            "description":"Optional array of subcategory strings. If used must be array of strings with at least one string.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "channels":{
+            "description":"Optional discord feature. Associates quote with specific discord channels (if quote_bot.py is ever used by a Discord bot). If used must be array of strings with at least one string.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "quote"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}
