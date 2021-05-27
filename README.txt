@@ -3,7 +3,7 @@ README
 DiscordBotRunner Description
 
 DiscordBotRunner was made to be able to dynamically load and run any number of arbitrary Discord bots under a single Discord Bot instance. That way a single Discord Bot can run theoretically an infinite number of "Discord Bots."
-DiscordBotRunner runs a "Discord Bot" by importing and running an implementation of a "BehaviorSet," which is an abstract class that inherits the Thread class. Users define the Discord Bot's behavior by implementing the BehaviorSet class and can then have the DiscordBotRunner "load" and run them as individual threads.
+DiscordBotRunner runs a given "Discord Bot" by importing and running an implementation of a "BehaviorSet," which is an abstract class that inherits the Thread class. Users define the Discord Bot's behavior by implementing the BehaviorSet class and can then have the DiscordBotRunner "load" and run them as individual threads.
 The defined BehaviorSet can then be provided to the DiscordBotRunner either dynamically or from the outset on initialization. The DiscordBotRunner will import the BehaviorSet and module dependencies and then run the BehaviorSet as a new thread.
 After at least one BehaviorSet is loaded, Discord channels and users can be registered to use the BehaviorSet (see admin commands below). This is how a BehaviorSet 'subscribes' to input. 
 The DiscordBotRunner will relay the inputs from a Discord User/Channel pair to a BehaviorSet if the former is registered/authorized to use the BehaviorSet (see registration command below).
