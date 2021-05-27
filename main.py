@@ -13,7 +13,7 @@ TOKEN = 'ODA5NTc4NzQzNjY4Mjc3MjU0.YCXI9Q.FuiYEDTnoQIN0_dQ8huIqIfdJGs'
 
 def main():
   config = configparser.ConfigParser()
-  config.read("./discord_bot_runner/config/tokens.ini")
+  config.read("./discord_bot_runner/keys/tokens.ini")
   TOKEN = config['tokens']['discord']
   intents = discord.Intents.all()
   client = DiscordBotRunner(intents=intents)
