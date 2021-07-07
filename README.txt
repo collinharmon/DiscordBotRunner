@@ -16,7 +16,7 @@ Notes:
 /DiscordBotRunner/behavior_sets/ is the relative path to the folder the DiscordBotRunner looks at for loading BehaviorSet implementations upon initialization. It is also the location the DiscordBotRunner will store dynamically loaded BehaviorSets and Python modules. External modules which a given BehaviorSet implementation may use should be imported by the BehaviorSet implementation in a relative fashion (See QouteBot BehaviorSet example under /DiscordBotRunner/behavior_sets/). 
 
 Admin Commands
-Administrative commands begin with `./admin` can be executed in any channel provided the DiscordBotRunner is listening on the Guild from which the commands are sent. By default the command responses are disabled (see log command).
+Administrative commands begin with `./admin` and can be executed in any channel provided the DiscordBotRunner is listening on the Guild from which the commands are sent. By default the command responses are disabled (see log command).
 
 `./admin log`
 	Description: This command takes exactly one argument, `enable` or `disable` for toggling the admin error and message log.
