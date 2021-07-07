@@ -2,8 +2,6 @@
 
 A Discord Bot that can dynamically load and run number of arbitrary Discord Bots.
 
-![test](img/admin_show_2.PNG)
-
 ## Description
 DiscordBotRunner was made to be able to dynamically load and run any number of arbitrary Discord bots under a single Discord Bot instance. That way a single Discord Bot can run theoretically an infinite number of "Discord Bots."
 
@@ -55,19 +53,19 @@ Administrative commands begin with `./admin` and can be executed in any channel 
 
 # Pictorial Examples of admin commands
 
-![./admin show](img/admin_show_1.png?raw=true)
+![./admin show](img/admin_show_1.PNG)
 
-![`./admin register, log enable, and show (2)`](img/admin_show_2.png)
+![`./admin register, log enable, and show (2)`](img/admin_show_2.PNG)
 
-![`./admin remove`](img/admin_remove.png)
+![`./admin remove`](img/admin_remove.PNG)
 
-![`./admin load (1/4)`](img/admin_load_1.png)
+![`./admin load (1/4)`](img/admin_load_1.PNG)
 
-![`./admin load (2/4)`](img/admin_load_2.png)
+![`./admin load (2/4)`](img/admin_load_2.PNG)
 
-![`./admin load (3/4)`](img/admin_load_3_1.png)
+![`./admin load (3/4)`](img/admin_load_3_1.PNG)
 
-![`./admin load (4/4)`](img/admin_load_3_2.png)
+![`./admin load (4/4)`](img/admin_load_3_2.PNG)
 
 
 ## Built With
