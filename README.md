@@ -59,6 +59,8 @@ Administrative commands begin with `./admin` and can be executed in any channel 
 
 ![`./admin remove`](img/admin_remove.PNG)
 
+![`./quotes`](img/quotes_get.PNG)
+
 ![`./admin load (1/4)`](img/admin_load_1.PNG)
 
 ![`./admin load (2/4)`](img/admin_load_2.PNG)
