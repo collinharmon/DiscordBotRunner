@@ -53,7 +53,7 @@ Administrative commands begin with `./admin` and can be executed in any channel 
 
 # Pictorial Examples of admin commands
 
-![`./admin show`](img/admin_show_1.png)
+![./admin show](/img/admin_show_1.png?raw=true)
 
 ![`./admin register, log enable, and show (2)`](./img/admin_show_2.png)
 
