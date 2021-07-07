@@ -2,7 +2,7 @@
 
 A Discord Bot that can dynamically load and run number of arbitrary Discord Bots.
 
-![`./admin register, log enable, and show (2)`](img/admin_show_2.png)
+![test](img/admin_show_2.PNG)
 
 ## Description
 DiscordBotRunner was made to be able to dynamically load and run any number of arbitrary Discord bots under a single Discord Bot instance. That way a single Discord Bot can run theoretically an infinite number of "Discord Bots."
