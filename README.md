@@ -51,7 +51,7 @@ Administrative commands begin with `./admin` and can be executed in any channel 
   * Format:      `./admin load` with provided attachments
   * Notes:       Currently, dragging and dropping files into the Discord Channel chat box will prompt the user to also provide a message with the attachment. This is where the user should provide `./admin load`. If a BehaviorSet has dependencies then simply load each dependency the same way. The ordering of the uploads/imports does not matter.
 
-## Pictorial Examples of admin commands
+# Pictorial Examples of admin commands
 
 ![`./admin show`](img/admin_show_1.png)
 ![`./admin register, log enable, and show (2)`](img/admin_show_2.png)
