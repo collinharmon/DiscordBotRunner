@@ -14,14 +14,12 @@ import inspect
 from os import listdir
 from os.path import isfile, join
 import ntpath
+import configparser
 
 #below two path and module is with respect to main.py environment
 B_SETS_ROOT_DIR = "./behavior_sets"
 B_SETS_ROOT_MODULE = "behavior_sets"
 
-ADMIN = "deuces#5802"
-#ADMIN = "aces#4038"
-#SLEEP_DURATION = 30  # 50 ms sleep
 SLEEP_DURATION = 5e-2  # 50 ms sleep
 
 
@@ -54,6 +52,10 @@ class DiscordBotRunner(discord.Client):
 
     self.log_enabled = False #by default logs are not relayed to discord. enable via admin
 
+    #init admin
+    config = configparser.ConfigParser()
+    config.read("./discord_bot_runner/keys/admin.ini")
+    self.ADMIN = config['admin']['user_id']
     #Load any pre-existing behavior sets under B_SETS_ROOT_DIR. Can be empty
     self.load_and_run_modules(B_SETS_ROOT_DIR, False)
     
@@ -81,7 +83,7 @@ class DiscordBotRunner(discord.Client):
       print(message)
       for member in guild.members:
         self.user_ids.append(member.id)
-        if (member.display_name + "#" + member.discriminator) == ADMIN:
+        if (member.display_name + "#" + member.discriminator) == self.ADMIN:
           self.admin_id = member.id
       for channel in guild.channels:
         self.channel_ids.append(int(channel.id))
@@ -501,7 +503,6 @@ class DiscordBotRunner(discord.Client):
       if os.path.exists(file_fullpath):
         os.remove(file_fullpath)
         reload_mods = True
-      file = open(file_fullpath, "w")
       
       lines = []
       line = ""
@@ -517,12 +518,16 @@ class DiscordBotRunner(discord.Client):
             line = ""
       if line != "":
         lines.append(line)
-      file.write(''.join(lines))
-      file.close()
+
+      import io
+      with io.open(file_fullpath, "w", encoding="utf-8") as f:
+        f.write(''.join(lines))
+
       try:
-        self.load_modules(B_SETS_ROOT_DIR, reload_mods)
+        self.load_and_run_modules(B_SETS_ROOT_DIR, reload_mods)
       except Exception as e:
         results.append("The file provided was an invalid Python Module")
+        print(str(e))
       else:
         results.append("Successfully loaded module %s." % attachment_name)
       
