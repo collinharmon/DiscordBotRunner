@@ -17,7 +17,7 @@ Any data a BehaviorSet would like to send to a Discord channel is sent to the Di
 Communication between BehaviorSets and DiscordBotRunner is done by using queues from the `queue` package. DiscordBotRunner has a single queue to handle message publishes by all child threads, or BehaviorSets. Each BehaviorSet has its own queue for DiscordBotRunner (the parent thread) to push to.
 
 
-Since DiscordBotRunner allows any Python program to be dynamically loaded and ran through Discord (and treat Discord channels as if they are terminals to a Python interpreter), any Guild which uses this bot becomes "Turing Complete"--since Python itself is Turing Complete. The ability for this Discord Bot to dynamically load and run any arbitrary Discord Bot echoes this spirit of Turing Completeness (Turing Machine vs Universal Turing Machine).
+Since DiscordBotRunner allows any Python program to be dynamically loaded and ran through Discord (and treat Discord channels as if they are terminals to a Python interpreter), any Guild which uses this bot becomes "Turing Complete"—since Python itself is Turing Complete. The ability for this Discord Bot to dynamically load and run any arbitrary Discord Bot echoes this spirit of Turing Completeness (Turing Machine vs Universal Turing Machine).
 
 ## Notes
 
