@@ -32,19 +32,19 @@ Administrative commands begin with `./admin` and can be executed in any channel 
   * Format:      `./admin log enable`
 
 * `./admin register` (`reg` for short)
-	* Description: Registers channels and users on a given behavior set.
+	* Description: Registers channels and users on a given BehaviorSet.
 	* Format:      `./admin register @some_discord_user, #somechannel on <name of BehaviorSet to register on>`
 	* Notes:       `@all` and `#all` will register every user and every channel on the provided BehaviorSet, respectively.
 
 * `./admin remove` (`rm` for short)
-	* Description: Removes/Unregisters channels and users on a given behavior set.
+	* Description: Removes/Unregisters channels and users on a given BehaviorSet.
 	* Format:      `./admin remove @some_discord_user, #somechannel on <name of BehaviorSet to register on>`
 	* Notes:       `@all` and `#all` will unregister every user and every channel on the provided BehaviorSet, respectively.
 
 * `./admin show`
 	* Description: Shows the available BehaviorSets that have been loaded by the DiscordBotRunner. Or if the name of a loaded BehaviorSet is provided as an argument, show the users and channels that are registered on it.
 	* Format:      `./admin show`
-  * `./admin show <name of behavior set>`
+  * `./admin show <name of BehaviorSet>`
 
 * `./admin load`
   * Description: Providing this command along with .py file attachments will attempt to load the and import the Python modules.
