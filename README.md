@@ -69,6 +69,9 @@ Administrative commands begin with `./admin` and can be executed in any channel 
 
 ![`./admin load (4/4)`](img/admin_load_3_2.PNG)
 
+Reloading a BehaviorSet:
+![`./admin load (4/4)`](img/admin_load_reload.PNG)
+
 
 ## Built With
 
