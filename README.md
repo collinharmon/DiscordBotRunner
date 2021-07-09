@@ -25,7 +25,7 @@ Since DiscordBotRunner allows any Python program to be dynamically loaded and ra
 
 ## Admin Commands
 
-Administrative commands begin with `./admin` and can be executed in any channel provided the DiscordBotRunner is listening on the Guild from which the commands are sent. By default the command responses are disabled (see log command). To set the ADMIN to a specific discord user modify the value, `user_id`, in the `/discord_bot_runner/keys/admin.ini` config file (e.g. for me it's #aces#5802).
+Administrative commands begin with `./admin` and can be executed in any channel provided the DiscordBotRunner is listening on the Guild from which the commands are sent. By default the command status responses are disabled (see log command). To set the ADMIN to a specific discord user modify the value, `user_id`, in the `/discord_bot_runner/keys/admin.ini` config file (e.g. for me it's #aces#5802).
 
 * `./admin log`
   * Description: This command takes exactly one argument, `enable` or `disable` for toggling the admin error and message log.
