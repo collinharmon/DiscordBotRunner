@@ -12,7 +12,7 @@ After at least one BehaviorSet is loaded, Discord channels and users can be regi
 
 The DiscordBotRunner will relay the inputs from a Discord User/Channel pair to a BehaviorSet if the former is registered/authorized to use the BehaviorSet (see registration command below).
 
-Any data a BehaviorSet would like to send to a Discord channel is sent to the DiscordBotRunner to handle the sending to the Discord Guild and appropriate channel.
+Any data a BehaviorSet would like to send to a Discord channel is sent to the DiscordBotRunner to handle the forwarding to the Discord Guild and appropriate channel.
 
 Communication between BehaviorSets and DiscordBotRunner is done by using queues from the `queue` package. DiscordBotRunner has a single queue to handle message publishes by all child threads, or BehaviorSets. Each BehaviorSet has its own queue for DiscordBotRunner to push to.
 
