@@ -14,14 +14,19 @@ The DiscordBotRunner will relay the inputs from a Discord User/Channel pair to a
 
 Any data a BehaviorSet would like to send to a Discord channel is sent to the DiscordBotRunner to handle the forwarding to the Discord Guild and appropriate channel.
 
-Communication between BehaviorSets and DiscordBotRunner is done by using queues from the `queue` package. DiscordBotRunner has a single queue to handle message publishes by all child threads, or BehaviorSets. Each BehaviorSet has its own queue for DiscordBotRunner (the parent thread) to push commands or information to.
+Communication between BehaviorSets and DiscordBotRunner is done by using queues from the `queue` package. DiscordBotRunner has a single queue to handle message publishes by all child threads, or BehaviorSets. Each BehaviorSet has its own queue for DiscordBotRunner (the parent thread) to push to. The message data pushed onto the queues is JSON data. See the Notes section for examples of the "schema" which defines the JSON data passed between threads (An actual JSON schema to validate the messages TBD).
 
 
 Since DiscordBotRunner allows any Python program to be dynamically loaded and ran through Discord (and treat Discord channels as if they are terminals to a Python interpreter), any Guild which uses this bot becomes "Turing Complete"—since Python itself is Turing Complete. The ability for DiscordBotRunner to dynamically load and run any arbitrary Discord Bot compared to a standard Discord Bot—whose behavior is static and constrained to a single input/output framework, echoes this spirit of Turing Completeness (Universal Turing Machine as compared to the Turing Machine). Somewhat silly, but thought why write a Discord bot when I could write a Discord Bot that can run any kind of Discord Bot?
 
 ## Notes
 
-`/DiscordBotRunner/behavior_sets/` is the relative path to the folder the DiscordBotRunner looks at for loading BehaviorSet implementations upon initialization. It is also the location the DiscordBotRunner will store dynamically loaded BehaviorSets and Python modules. External modules which a given BehaviorSet implementation may use should be imported by the BehaviorSet implementation in a relative fashion (See QuoteBot BehaviorSet example under `/DiscordBotRunner/behavior_sets/`). 
+*	`/DiscordBotRunner/behavior_sets/` is the relative path to the folder the DiscordBotRunner looks at for loading BehaviorSet implementations upon initialization. It is also the location the DiscordBotRunner will store dynamically loaded BehaviorSets and Python modules. External modules which a given BehaviorSet implementation may use should be imported by the BehaviorSet implementation in a relative fashion (See QuoteBot BehaviorSet example under `/DiscordBotRunner/behavior_sets/`). 
+
+*	The data the child threads push onto the parent queue is JSON data which abides the following "schema" (TODO create actual schema .json file to validate JSON data)
+	*	text_message: `{"channel":<integer id of target channel>, "data_type":"text_message", "data":"<Any sort of text data goes here>"}`
+	*	file_path:    `{"channel":<integer id of target channel>, "data_type":"file_path",    "file_path":"<path of file to be uploaded>"}`
+	*	text/upload:  `{"channel":<integer id of target channel>, "data_type":"text/upload",  "data":"<Any sort of text data goes here>", "file_path":"<path of file to be uploaded>"}`
 
 ## Admin Commands
 
@@ -50,6 +55,8 @@ Administrative commands begin with `./admin` and can be executed in any channel 
   * Description: Providing this command along with .py file attachments will attempt to load the and import the Python modules.
   * Format:      `./admin load` with provided attachments
   * Notes:       Currently, dragging and dropping files into the Discord Channel chat box will prompt the user to also provide a message with the attachment. This is where the user should provide `./admin load`. If a BehaviorSet has dependencies then simply load each dependency the same way. The ordering of the uploads/imports does not matter.
+
+## Configuration
 
 # Pictorial Examples of admin commands
 
