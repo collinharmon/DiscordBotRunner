@@ -39,7 +39,6 @@ class QuoteGenerator:
       self.error_log.append(error_msg)
     
     if arg_count > 0 and len(self.files_to_parse) == 0:
-      print("poop")
       error_msg = "Error: none of the arguments provided were valid files. QuoteGenerator is running but has no quotes to generate. See member functions for adding quotes after instantiation"
       self.error_log.append(error_msg)
     else:

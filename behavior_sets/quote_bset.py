@@ -14,12 +14,10 @@ from .quotes_generator import QuoteGenerator
 
 MAX_WAIT = 1000
 
-path_to_schema = "C:\\Users\\colli\\dev\\DiscordBotRunner\\behavior_sets\\data\\quote_generator_schema.json"
-
 class QuotesBehaviorSet(BehaviorSet):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
-    self.quote_generator = QuoteGenerator("C:\\Users\\colli\\dev\\DiscordBotRunner\\behavior_sets\\data\\quotes.json")
+    self.quote_generator = QuoteGenerator((os.path.dirname(os.path.realpath(__file__))) + "\\data\\quotes.json")
 
   def handle_discord_event_loop(self):
     #while soon
