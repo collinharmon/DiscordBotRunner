@@ -28,6 +28,8 @@ Since DiscordBotRunner allows any Python program to be dynamically loaded and ra
 	*	file_path:    `{"channel":<integer id of target channel>, "data_type":"file_path",    "file_path":"<path of file to be uploaded>"}`
 	*	text/upload:  `{"channel":<integer id of target channel>, "data_type":"text/upload",  "data":"<Any sort of text data goes here>", "file_path":"<path of file to be uploaded>"}`
 
+Check out the MarketBehaviorSet Discord Bot [MarketBehaviorSet](https://github.com/collinharmon/MarketBehaviorSet)!
+
 ## Admin Commands
 
 Administrative commands begin with `./admin` and can be executed in any channel provided the DiscordBotRunner is listening on the Guild from which the commands are sent. By default the command status responses are disabled (see log command). To set the ADMIN to a specific Discord user modify the value, `user_id`, in the `/discord_bot_runner/keys/admin.ini` config file (e.g. for me it's aces#5802).
