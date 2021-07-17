@@ -92,6 +92,12 @@ class DiscordBotRunner(discord.Client):
       print("Critical Error: This bot is not registered with any Discord guilds.")
       await self.exit_bot()
     
+  async def on_member_join(self, member):
+    self.user_ids.append(member.id)
+
+  async def on_guild_channel_create(self, channel):
+    self.channel_ids.append(int(channel.id))
+
   async def on_message(self, message):
     """
     Parameters  - message: Discord message to be inspected and read.
