@@ -22,7 +22,7 @@ def main():
     else:
       intents = discord.Intents.all()
       client = DiscordBotRunner(intents=intents)
-      client.run()
+      client.run(token)
       clients.append(client)
   
 if __name__ == "__main__":
