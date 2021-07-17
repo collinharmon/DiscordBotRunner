@@ -93,9 +93,17 @@ class DiscordBotRunner(discord.Client):
       await self.exit_bot()
     
   async def on_member_join(self, member):
+    """
+    Parameters  -
+    Description - Upon new member joining a monitored Guild, add to self.user_ids
+    """
     self.user_ids.append(member.id)
 
   async def on_guild_channel_create(self, channel):
+    """
+    Parameters  -
+    Description - Upon a new channel creation on a monitored Guild, add to self.channel_ids
+    """
     self.channel_ids.append(int(channel.id))
 
   async def on_message(self, message):
