@@ -64,10 +64,10 @@ class DiscordBotRunner(discord.Client):
     Parameters  -
     Description - Create asyncio loop for monitoring the BehaviorSet message queue. Initialize class data structures with guilds, channels, users, and admin ID
     """
-    print('Logged in as', flush = True)
+    print('Logged in as')
     self.loop.create_task(self.check_queue())
-    print(self.user.name, flush = True)
-    print('------', flush = True)
+    print(self.user.name)
+    print('------')
     message = "\nBehaviorSets Available:"
     for b_set_name in self.behavior_sets:
       message = message + "\n- %s" % b_set_name
@@ -80,7 +80,7 @@ class DiscordBotRunner(discord.Client):
     #get every guild ID, every channel ID, and every user ID
     for guild in self.guilds:
       self.guild_ids.append(guild.id)
-      print(message, flush = True)
+      print(message)
       for member in guild.members:
         self.user_ids.append(member.id)
         if (member.display_name + "#" + member.discriminator) == self.ADMIN:
@@ -89,7 +89,7 @@ class DiscordBotRunner(discord.Client):
         self.channel_ids.append(int(channel.id))
 
     if len(self.guild_ids) == 0:
-      print("Critical Error: This bot is not registered with any Discord guilds.", flush = True)
+      print("Critical Error: This bot is not registered with any Discord guilds.")
       await self.exit_bot()
     
   async def on_member_join(self, member):
