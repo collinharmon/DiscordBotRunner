@@ -26,7 +26,6 @@ SLEEP_DURATION = 5e-2  # 50 ms sleep
 class DiscordBotRunner(discord.Client):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
-    sys.stdout = open('file', 'w')
 
     self.mod_path_to_mod = {} #k=path to py mod v=module
     self.behavior_sets = {}  #k=('bset_name'),v=(bset_instance)
