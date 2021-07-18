@@ -5,7 +5,6 @@ import configparser
 import sys
 
 def main():
-  sys.stdout = open('file', 'w')
   config = configparser.ConfigParser()
   config_files = [arg for arg in sys.argv if arg.endswith('.ini')]
   if len(config_files) < 1:
