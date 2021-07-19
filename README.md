@@ -54,7 +54,7 @@ Administrative commands begin with `./admin` and can be executed in any channel 
   * `./admin show <name of BehaviorSet>`
 
 * `./admin load`
-  * Description: Providing this command along with .py file attachments will attempt to load the and import the Python modules.
+  * Description: Providing this command along with .py file attachments will attempt to load and import the Python modules.
   * Format:      `./admin load` with provided attachments
   * Notes:       Currently, dragging and dropping files into the Discord Channel chat box will prompt the user to also provide a message with the attachment. This is where the user should provide `./admin load`. If a BehaviorSet has dependencies then simply load each dependency the same way. The ordering of the uploads/imports does not matter.
 
