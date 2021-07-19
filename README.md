@@ -63,12 +63,12 @@ Administrative commands begin with `./admin` and can be executed in any channel 
 * DiscordBotRunner depends on two .ini configuration files to run: tokens.ini and admin.ini.
 
 * The tokens.ini file holds the Discord Token and the path of it is to be passed as an argument to main. The .ini follows as:
-[tokens]
-discord = <token>
+  * [tokens]
+  * discord = <token>
 
 * The admin.ini file holds the Discord username and ID to be disgnated as ADMIN and looks like:
-[admin]
-user_id = <name>#<id>  (e.g. mine is aces#5802)
+  * [admin]
+  * user_id = <name>#<id>  (e.g. mine is aces#5802)
 
 # Pictorial Examples of admin commands
 
