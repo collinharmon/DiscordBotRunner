@@ -1,9 +1,11 @@
-path_to_schema = ".\\behavior_sets\\data\\quote_generator_schema.json"
 import json
+import os
 from os import path
 from jsonschema import validate
 import random
 
+path_to_schema = "/data/quote_generator_schema.json"
+path_to_schema = os.path.join(os.path.dirname(os.path.realpath(__file__)), path_to_schema)
 
 class QuoteGenerator:
   def __init__(self, *args, **kwargs):
