@@ -17,7 +17,7 @@ Any data a BehaviorSet would like to send to a Discord channel is sent to the Di
 Communication between BehaviorSets and DiscordBotRunner is done by using queues from the `queue` package. DiscordBotRunner has a single queue to handle message publishes by all child threads, or BehaviorSets. Each BehaviorSet has its own queue for DiscordBotRunner (the parent thread) to push to. The message data pushed onto the queues is JSON data. See the Notes section for examples of the "schema" which defines the JSON data passed between threads (An actual JSON schema to validate the messages TBD).
 
 
-Since DiscordBotRunner allows any Python program to be dynamically loaded and ran through Discord (and treat Discord channels as if they are terminals to a Python interpreter), any Guild which uses this bot becomes "Turing Complete"—since Python itself is Turing Complete. The ability for DiscordBotRunner to dynamically load and run any arbitrary Discord Bot compared to a standard Discord Bot—whose behavior is static and constrained to a single input/output framework, echoes this spirit of Turing Completeness (Universal Turing Machine as compared to the Turing Machine). Somewhat silly, but thought why write a Discord bot when I could write a Discord Bot that can run any kind of Discord Bot?
+Since DiscordBotRunner allows any Python program to be dynamically loaded and ran through Discord (and treat Discord channels as if they are terminals to a Python interpreter), any Guild which uses this bot becomes "Turing Complete"—since Python itself is Turing Complete. The ability for DiscordBotRunner to dynamically load and run any arbitrary Discord Bot compared to a standard Discord Bot—whose behavior is static and constrained to a single input/output framework, echoes this spirit of Turing Completeness (Universal Turing Machine as compared to the Turing Machine). Somewhat silly, but thought why write a Discord bot with specific behaviors when I could write a Discord Bot that can run any kind of Discord Bot?
 
 ## Notes
 
@@ -54,11 +54,21 @@ Administrative commands begin with `./admin` and can be executed in any channel 
   * `./admin show <name of BehaviorSet>`
 
 * `./admin load`
-  * Description: Providing this command along with .py file attachments will attempt to load the and import the Python modules.
+  * Description: Providing this command along with .py file attachments will attempt to load and import the Python modules.
   * Format:      `./admin load` with provided attachments
   * Notes:       Currently, dragging and dropping files into the Discord Channel chat box will prompt the user to also provide a message with the attachment. This is where the user should provide `./admin load`. If a BehaviorSet has dependencies then simply load each dependency the same way. The ordering of the uploads/imports does not matter.
 
 ## Configuration
+
+* DiscordBotRunner depends on two .ini configuration files to run: tokens.ini and admin.ini.
+
+* The tokens.ini file holds the Discord Token and the path of it is to be passed as an argument to main. The .ini follows as:
+  * [tokens]
+  * discord = the_token
+
+* The admin.ini file holds the Discord username and ID to be disgnated as ADMIN and looks like:
+  * [admin]
+  * user_id = discord_name#discord_id  (e.g. mine is aces#5802)
 
 # Pictorial Examples of admin commands
 
