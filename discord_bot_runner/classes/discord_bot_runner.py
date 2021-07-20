@@ -158,7 +158,7 @@ class DiscordBotRunner(discord.Client):
       except:
         pass
       else:
-        json_data = json.loads(item)
+        json_data = json.loads(item, strict=False)
         channel = discord.utils.get(self.get_all_channels(), id=json_data['channel'])
         data_type = json_data['data_type']
         if data_type == "text_message":
