@@ -20,10 +20,12 @@ class QuoteGenerator:
     self.bad_file_list = []
 
     try:
+      print("Path to schema: %s" % path_to_schema)
       self.set_schema(path_to_schema)
     except:
       #in case user moves file should really program this to at least search descendents for file
       error_msg = "Error opening and reading schema: %s. JSON input will not be supported." % path_to_schema
+      print(error_msg)
       self.error_log.append(error_msg)
 
     arg_count = len(args)
@@ -170,7 +172,10 @@ class QuoteGenerator:
       print(quote)
 
   def get_random_quote(self):
-    return self.generic_quotes[( random.randint(0, len(self.generic_quotes) - 1 ) )]
+    if len(self.generic_quotes) > 0:
+      return self.generic_quotes[( random.randint(0, len(self.generic_quotes) - 1 ) )]
+    else:
+      return "No quotes have been added yet! But here is a default one: “Hard work is worthless for those that don't believe in themselves.” – Naruto Uzumaki."
 
 """
 helper functions

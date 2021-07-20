@@ -17,7 +17,9 @@ MAX_WAIT = 1000
 class QuotesBehaviorSet(BehaviorSet):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
-    self.quote_generator = QuoteGenerator(os.path.join(os.path.dirname(os.path.realpath(__file__)), "/data/quotes.json"))
+    quotes_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "/data/quotes.json")
+    print("The quotes file: %s" % quotes_file)
+    self.quote_generator = QuoteGenerator(quotes_file)
 
   def handle_discord_event_loop(self):
     #while soon
