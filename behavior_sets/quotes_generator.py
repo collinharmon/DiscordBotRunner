@@ -5,7 +5,8 @@ from jsonschema import validate
 import random
 
 path_to_schema = "/data/quote_generator_schema.json"
-path_to_schema = os.path.join(os.path.dirname(os.path.realpath(__file__)), path_to_schema)
+path_to_schema = os.path.join(os.path.dirname(os.path.realpath(__file__)), "data")
+path_to_schema = os.path.join(path_to_schema, "quote_generator_schema.json")
 
 class QuoteGenerator:
   def __init__(self, *args, **kwargs):
